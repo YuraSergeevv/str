@@ -124,6 +124,13 @@
                 color: $color_1;
             }
         }
+        &:last-of-type{
+            font-weight: 700;
+            .table_column{
+                border: none;
+            } 
+        }
+        
         
     }
    

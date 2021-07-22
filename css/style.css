@@ -861,6 +861,12 @@ textarea.error {
 .graph .table_row:hover .column_name {
   color: #1BA2FC;
 }
+.graph .table_row:last-of-type {
+  font-weight: 700;
+}
+.graph .table_row:last-of-type .table_column {
+  border: none;
+}
 .graph .table_column {
   flex: 0 0 11%;
   display: flex;
