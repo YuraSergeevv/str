@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- Оболочка документа -->
+<html lang="ru">
+
+<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+
+<head>
+    <title>Главная</title>
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link rel="shortcut icon" href="img/icons/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <!-- ОБОЛОЧКА -->
+    <div class="referral wrapper">
+        <!-- @import "header.kit" -->
+        <div class="referral_wrap page">
+            <div class="top">
+                <div class="container">
+                    <div class="title">Реферальная ссылка</div>
+                    <div class="subtitle">Краткое описание реферальной ссылки и что с ней делать.</div>
+                    <a href="https://readytobuystore.com/92488s848" id="link_copy"
+                        class="link">https://readytobuystore.com/92488s848</a>
+                    <div class="block_btn">
+                        <button class="btn btn_1 copy_link_js" data-clipboard-action="copy"
+                            data-clipboard-target="#link_copy"><span>Сохранить
+                                данные</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="container">
+                    <div class="block_btn">
+                        <button class="btn btn_2 copy_link_js" data-clipboard-action="copy"
+                            data-clipboard-target="#link_copy"><span>Подтверждение эл. почты</span></button>
+
+                        <button class="btn btn_2 copy_link_js" data-clipboard-action="copy"
+                            data-clipboard-target="#link_copy"><span>Данные для входа</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- @import "footer.kit" -->
+    </div>
+
+    <!-- @import "popup.kit" -->
+    <!-- @import "bottom.kit" -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+    <script>
+        new ClipboardJS('.copy_link_js', {
+            text: function (trigger) {
+                const query = trigger.getAttribute('data-clipboard-target');
+                const target = document.querySelector(query);
+                setTimeout(function () {
+                    alert('Link copy')
+                }, 500)
+                return target.getAttribute('href');
+            }
+        });
+    </script>
+</body>
+
+</html>

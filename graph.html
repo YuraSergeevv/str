@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<!-- Оболочка документа -->
+<html lang="ru">
+
+<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+
+<head>
+    <title>Главная</title>
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link rel="shortcut icon" href="img/icons/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <!-- ОБОЛОЧКА -->
+    <div class="graph wrapper">
+<header class="header">
+    <div class="container">
+        <div class="header_inner">
+            <div class="column logo_block">
+                <div href="#" class="logo">
+                    <img src="img/logo.svg" alt="">
+                </div>
+            </div>
+            <div class="column">
+                <a href="card.html" class="section_link menu_js lol">
+
+                    <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#card"></use>
+                    </svg>
+
+                    <span class="text">Карточка</span>
+                </a>
+                <a href="graph.html" class="section_link menu_js">
+
+                    <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#graph"></use>
+                    </svg>
+
+                    <span class="text">График</span>
+                </a>
+                <a href="referral.html" class="section_link menu_js">
+
+                    <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#referral"></use>
+                    </svg>
+
+                    <span class="text">Реф.ссылка</span>
+                </a>
+            </div>
+            <div class="column last_column">
+                <div class="date_wrap">
+
+                    <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#clock"></use>
+                    </svg>
+                    <span class="date date_js"></span>
+                    <span class="date time_js"></span>
+                    <span class="date_info">Отчетный период до 00:00 ежедневно</span>
+                </div>
+                <div class="user_wrap">
+
+                    <svg class="icon">
+                        <use xlink:href="img/svg/sprite.svg#user"></use>
+                    </svg>
+
+                    <span class="user_number">2818752</span>
+                </div>
+                <div class="country_wrap">
+                    <img src="img/svg/flag.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>        <div class="graph_wrap page">
+            <div class="container">
+                <div class="graph_row">
+                    <div class="graph_column column_big">
+                        <div class="title_block ">
+                            <div class="title">График — Екатерина Шарова</div>
+                            <div class="btn_sort"></div>
+                        </div>
+                        <div class="setting_show">
+                            <div class="check_block">
+                                <div class="sub">Показывать</div>
+                                <div class="check_elements">
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="day" id="day">
+                                        <label for="day" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="day" class="text">по дням</label>
+                                    </div>
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="week" id="week">
+                                        <label for="week" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="week" class="text">по неделям</label>
+                                    </div>
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="mounth" id="mounth">
+                                        <label for="mounth" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="mounth" class="text">по месяцам</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="date_setting input_block">
+                                <div class="row">
+                                    <div class="sub">Начало с</div>
+                                    <input class="date_input date_start" type="text">
+                                    <svg class="date_ico">
+                                        <use xlink:href="img/svg/sprite.svg#date_ico"></use>
+                                    </svg>
+
+                                </div>
+                                <div class="row">
+                                    <div class="sub">Заканчивая по</div>
+                                    <input class="date_input date_end" type="text">
+                                    <svg class="date_ico">
+                                        <use xlink:href="img/svg/sprite.svg#date_ico"></use>
+                                    </svg>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="graph_block">
+                            <canvas id="chart" style="width: 100%; height: 100%"></canvas>
+                        </div>
+                        <div class="title">Табличные данные</div>
+                        <div class="sroll-x">
+                            <div class="table">
+                                <div class="table_row row_title">
+                                    <div class="table_column table_column_title column_name">Ответственный</div>
+                                    <div class="table_column table_column_title">Приглашал</div>
+                                    <div class="table_column table_column_title">Пригласил</div>
+                                    <div class="table_column table_column_title">1 встреча</div>
+                                    <div class="table_column table_column_title">Интерес</div>
+                                    <div class="table_column table_column_title">2 встреча</div>
+                                    <div class="table_column table_column_title">Товарооборот</div>
+                                    <div class="table_column table_column_title">Контракты</div>
+                                </div>
+                                <div class="table_row">
+                                    <div class="table_column column_name">Александр и Елена Шерстюк</div>
+                                    <div class="table_column">123</div>
+                                    <div class="table_column">123</div>
+                                    <div class="table_column">123</div>
+                                    <div class="table_column">123</div>
+                                    <div class="table_column">123</div>
+                                    <div class="table_column">123</div>
+                                    <div class="table_column">123</div>
+                                </div>
+                                <div class="table_row">
+                                    <div class="table_column column_name">Абдеев Роман</div>
+                                    <div class="table_column">258</div>
+                                    <div class="table_column">258</div>
+                                    <div class="table_column">258</div>
+                                    <div class="table_column">258</div>
+                                    <div class="table_column">258</div>
+                                    <div class="table_column">258</div>
+                                    <div class="table_column">258</div>
+                                </div>
+                                <div class="table_row">
+                                    <div class="table_column column_name">Игорь С.</div>
+                                    <div class="table_column">350</div>
+                                    <div class="table_column">350</div>
+                                    <div class="table_column">350</div>
+                                    <div class="table_column">350</div>
+                                    <div class="table_column">350</div>
+                                    <div class="table_column">350</div>
+                                    <div class="table_column">350</div>
+                                </div>
+                                <div class="table_row">
+                                    <div class="table_column column_name">Василий В.</div>
+                                    <div class="table_column">365</div>
+                                    <div class="table_column">365</div>
+                                    <div class="table_column">365</div>
+                                    <div class="table_column">365</div>
+                                    <div class="table_column">365</div>
+                                    <div class="table_column">365</div>
+                                    <div class="table_column">365</div>
+                                </div>
+                                <div class="table_row">
+                                    <div class="table_column column_name">Александр и Елена Шерстюк</div>
+                                    <div class="table_column">753</div>
+                                    <div class="table_column">753</div>
+                                    <div class="table_column">753</div>
+                                    <div class="table_column">753</div>
+                                    <div class="table_column">753</div>
+                                    <div class="table_column">753</div>
+                                    <div class="table_column">753</div>
+                                </div>
+                                <div class="table_row">
+                                    <div class="table_column column_name">Абдеев Роман</div>
+                                    <div class="table_column">369</div>
+                                    <div class="table_column">369</div>
+                                    <div class="table_column">369</div>
+                                    <div class="table_column">369</div>
+                                    <div class="table_column">369</div>
+                                    <div class="table_column">369</div>
+                                    <div class="table_column">369</div>
+                                </div>
+                                <div class="table_row">
+                                    <div class="table_column column_name">Игорь С.</div>
+                                    <div class="table_column">524</div>
+                                    <div class="table_column">524</div>
+                                    <div class="table_column">524</div>
+                                    <div class="table_column">524</div>
+                                    <div class="table_column">524</div>
+                                    <div class="table_column">524</div>
+                                    <div class="table_column">524</div>
+                                </div>
+                                <div class="table_row">
+                                    <div class="table_column column_name">Василий В.</div>
+                                    <div class="table_column">023</div>
+                                    <div class="table_column">023</div>
+                                    <div class="table_column">023</div>
+                                    <div class="table_column">023</div>
+                                    <div class="table_column">023</div>
+                                    <div class="table_column">023</div>
+                                    <div class="table_column">023</div>
+                                </div>
+                                <div class="table_row">
+                                    <div class="table_column column_name">Итого</div>
+                                    <div class="table_column">523</div>
+                                    <div class="table_column">523</div>
+                                    <div class="table_column">523</div>
+                                    <div class="table_column">523</div>
+                                    <div class="table_column">523</div>
+                                    <div class="table_column">$ 20090.00</div>
+                                    <div class="table_column">523</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="graph_column column_small">
+                        <div class="btn_close"></div>
+                        <div class="sort_block">
+                            <div class="sort_title">Сортировать</div>
+                            <div class="check_block">
+                                <div class="check_elements">
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="check_1" id="check_1">
+                                        <label for="check_1" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="check_1" class="text">Все</label>
+                                    </div>
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="check_2" id="check_2">
+                                        <label for="check_2" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="check_2" class="text">Приглашал на первую встречу</label>
+                                    </div>
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="check_3" id="check_3">
+                                        <label for="check_3" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="check_3" class="text">Пригласил на первую встречу</label>
+                                    </div>
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="check_4" id="check_4">
+                                        <label for="check_4" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="check_4" class="text">Пришли на первую встречу</label>
+                                    </div>
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="check_5" id="check_5">
+                                        <label for="check_5" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="check_5" class="text">Приглашал на вторую встречу</label>
+                                    </div>
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="check_6" id="check_6">
+                                        <label for="check_6" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="check_6" class="text">Пригласил на вторую встречу</label>
+                                    </div>
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="check_7" id="check_7">
+                                        <label for="check_7" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="check_7" class="text">Пришли на вторую встречу</label>
+                                    </div>
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="check_8" id="check_8">
+                                        <label for="check_8" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="check_8" class="text">Контракты</label>
+                                    </div>
+                                    <div class="check_item">
+                                        <input class="checkbox none checktrue" type="checkbox" name="check_9"
+                                            id="check_9">
+                                        <label for="check_9" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="check_9" class="text">Товарооборот</label>
+                                    </div>
+                                    <div class="input_block truecheck">
+                                        <div class="row ">
+                                            <div class="select">
+                                                <div class="select__header">
+                                                    <div class="select__current"><span class="default">Выберете</span>
+                                                    </div>
+                                                    <svg class="select__icon">
+                                                        <use xlink:href="img/svg/sprite.svg#select"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="select__body">
+                                                    <div class="select__item"><span>Больше</span></div>
+                                                    <div class="select__item"><span>Меньше</span></div>
+                                                    <div class="select__item"><span>Равно</span></div>
+                                                    <div class="select__item"><span>Не равно</span></div>
+                                                    <div class="select__item"><span>NULL</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="card_input reverse"> <input type="number" placeholder="0"
+                                                    name='card-input-8'> <span class="card_unit">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sort_block">
+                            <div class="sort_title">Сортировать</div>
+                            <div class="check_block">
+                                <div class="check_elements">
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="check_10" id="check_10">
+                                        <label for="check_10" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="check_10" class="text">Все</label>
+                                    </div>
+                                    <div class="check_item">
+                                        <input class="checkbox none" type="checkbox" name="check_11" id="check_11">
+                                        <label for="check_11" class="check">
+                                            <svg class="arrow_check">
+                                                <use xlink:href="img/svg/sprite.svg#check"></use>
+                                            </svg>
+                                        </label>
+                                        <label for="check_11" class="text">Личные показатели</label>
+                                    </div>
+
+                                    <div class="sub">Первая линия</div>
+                                    <div class="scroll_block">
+                                        <div class="check_item">
+                                            <input class="checkbox none" type="checkbox" name="check_12" id="check_12">
+                                            <label for="check_12" class="check">
+                                                <svg class="arrow_check">
+                                                    <use xlink:href="img/svg/sprite.svg#check"></use>
+                                                </svg>
+                                            </label>
+                                            <label for="check_12" class="text">Абдеев Роман</label>
+                                        </div>
+                                        <div class="check_item">
+                                            <input class="checkbox none" type="checkbox" name="check_13" id="check_13">
+                                            <label for="check_13" class="check">
+                                                <svg class="arrow_check">
+                                                    <use xlink:href="img/svg/sprite.svg#check"></use>
+                                                </svg>
+                                            </label>
+                                            <label for="check_13" class="text">Василий В.</label>
+                                        </div>
+                                        <div class="check_item">
+                                            <input class="checkbox none" type="checkbox" name="check_14" id="check_14">
+                                            <label for="check_14" class="check">
+                                                <svg class="arrow_check">
+                                                    <use xlink:href="img/svg/sprite.svg#check"></use>
+                                                </svg>
+                                            </label>
+                                            <label for="check_14" class="text">Арефьевы Валерия и Николай</label>
+                                        </div>
+                                        <div class="check_item">
+                                            <input class="checkbox none" type="checkbox" name="check_15" id="check_15">
+                                            <label for="check_15" class="check">
+                                                <svg class="arrow_check">
+                                                    <use xlink:href="img/svg/sprite.svg#check"></use>
+                                                </svg>
+                                            </label>
+                                            <label for="check_15" class="text">Абдеев Роман</label>
+                                        </div>
+                                        <div class="check_item">
+                                            <input class="checkbox none" type="checkbox" name="check_16" id="check_16">
+                                            <label for="check_16" class="check">
+                                                <svg class="arrow_check">
+                                                    <use xlink:href="img/svg/sprite.svg#check"></use>
+                                                </svg>
+                                            </label>
+                                            <label for="check_16" class="text">Василий В.</label>
+                                        </div>
+                                        <div class="check_item">
+                                            <input class="checkbox none" type="checkbox" name="check_17" id="check_17">
+                                            <label for="check_17" class="check">
+                                                <svg class="arrow_check">
+                                                    <use xlink:href="img/svg/sprite.svg#check"></use>
+                                                </svg>
+                                            </label>
+                                            <label for="check_17" class="text">Арефьевы Валерия и Николай</label>
+                                        </div>
+                                        <div class="check_item">
+                                            <input class="checkbox none" type="checkbox" name="check_18" id="check_18">
+                                            <label for="check_18" class="check">
+                                                <svg class="arrow_check">
+                                                    <use xlink:href="img/svg/sprite.svg#check"></use>
+                                                </svg>
+                                            </label>
+                                            <label for="check_18" class="text">Абдеев Роман</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="sort_block">
+                            <div class="sort_title">Найти партнёра</div>
+                            <div class="partner">
+                                <input type="number" placeholder="Введите ID партнёра">
+                                <span>ID партнёра</span>
+                            </div>
+
+                        </div>
+
+                        <div class="block_btn">
+                            <button type="submit" class="btn btn_1"><span>Отобразить на графике</span></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+<!-- подвал сайта -->
+        </div>
+
+ <!-- попап -->
+    <div class="popup js-popup" data-id-popup="popup-0">
+        <div class="popup__opas"></div>
+        <div class="popup__wrapp js-popup__wrapp">
+            <span class="popup__close js-popup__close"></span>
+            <div class="popup_container">
+                <h2>Попап</h2>
+            </div>
+        </div>
+    </div>
+
+    <button class="js-btn-popup"></button> <!-- кнопка прокрутки вверх -->
+    <div class="scroll-up js-scroll-up">
+        <svg class="scroll-up__svg" viewBox="-2 -2 52 52">
+            <path class="scroll-up__path js-scroll-up__path" d="M24,0 a24,24 0 0,1 0,48 a24,24 0 0,1 0,-48"/>
+        </svg>
+    </div>
+    
+    <!-- Подключеине скриптов -->
+    <script src="libs/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>        <script src="libs/pickmeup.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
+        <script>
+
+            pickmeup('.date_start', {
+                position: 'bottom',
+                hide_on_select: true,
+                locale: 'ru',
+            })
+
+
+
+            pickmeup('.date_end', {
+                position: 'bottom',
+                hide_on_select: true,
+                locale: 'ru',
+            })
+
+
+            let labels = ['01.06', '02.06', '03.06', '04.06', '05.06', '06.06', '07.06', '08.06'];
+
+            let data = [
+                {
+                    label: 'Dataset 1',
+                    data: [34, 38, 24, 49, 36, 13, 30, 24],
+                    borderColor: '#51c0bf',
+                    backgroundColor: '#51c0bf',
+                },
+                {
+                    label: 'Dataset 2',
+                    data: [7, 5, 36, 40, 13, 18, 12, 13],
+                    borderColor: '#fecc60',
+                    backgroundColor: '#fecc60',
+                },
+                {
+                    label: 'Dataset 3',
+                    data: [32, 18, 40, 7, 3, 47, 26, 8],
+                    borderColor: '#3da3e8',
+                    backgroundColor: '#3da3e8',
+                },
+                {
+                    label: 'Dataset 4',
+                    data: [46, 44, 15, 38, 8, 27, 10, 37],
+                    borderColor: '#76a3e8',
+                    backgroundColor: '#76a3e8',
+                },
+            ];
+
+            let max = 0;
+            for (let i = 0; i < data.length; i++) {
+                for (let j = 0; j < data[i].data.length; j++) {
+                    if (data[i].data[j] > max) {
+                        max = data[i].data[j];
+                    }
+                }
+            }
+
+            max = Math.ceil((max / 10)) * 10;
+
+            Chart.defaults.font.size = 10;
+            Chart.defaults.color = "#cecece"
+            var ctx = document.getElementById('chart');
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: data,
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            position: 'left',
+                            min: 0,
+                            max: max,
+                        },
+                        t: {
+                            beginAtZero: true,
+                            position: 'right',
+                            min: 0,
+                            max: max,
+                            ticks: {
+                                callback: function (value, index, values) {
+                                    return '$' + value;
+                                },
+                            },
+
+                        },
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                        }
+                    }
+                }
+            });
+        </script>
+
+</body>
+
+</html>

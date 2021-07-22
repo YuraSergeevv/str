@@ -1,0 +1,29 @@
+.referral{
+
+    .referral_wrap{
+    min-height: calc(100vh - 140px);
+    display: flex;
+    flex-direction: column;
+    .top{
+        flex: 1 1 auto;
+        .block_btn{
+            margin-bottom: 20px;
+        }
+    }  
+}
+
+    .subtitle{
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .link{
+        width: max-content;
+        color: $color_1 ;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+        text-decoration: underline;
+        
+    }
+}

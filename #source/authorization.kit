@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Оболочка документа -->
+<html lang="ru">
+
+<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+
+<head>
+    <title>Главная</title>
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link rel="shortcut icon" href="img/icons/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <!-- ОБОЛОЧКА -->
+    <div class="authorization wrapper">
+        <!-- @import "header.kit" -->
+        <div class="authorization_wrap page">
+            <div class="container">
+                <div class="title">Авторизация</div>
+                <form class="authorization_block input_block" action="#" method="GET">
+                    <div class="row">
+                        <span class="login">Логин</span><input type="text" placeholder=" Введити логин">
+                    </div>
+                    <div class="row">
+                        <span class="password">Пароль</span><input type="password" placeholder=" Введити пароль">
+                    </div>
+                    <a href="" class="forgot">Забыл пароль?</a>
+                    <div class="block_btn">
+                        <button type="submit" class="btn btn_1"><span>Войти в личный кабинет</span></button>
+                    </div>
+                </form>
+                <a href="#" class="link">Регистрация</a>
+            </div>
+        </div>
+        <!-- @import "footer.kit" -->
+    </div>
+
+    <!-- @import "popup.kit" -->
+    <!-- @import "bottom.kit" -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+    <script>
+        new ClipboardJS('.copy_link_js', {
+            text: function (trigger) {
+                const query = trigger.getAttribute('data-clipboard-target');
+                const target = document.querySelector(query);
+                setTimeout(function () {
+                    alert('Link copy')
+                }, 500)
+                return target.getAttribute('href');
+            }
+        });
+    </script>
+</body>
+
+</html>

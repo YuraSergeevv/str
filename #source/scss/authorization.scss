@@ -1,0 +1,43 @@
+.authorization{
+
+    .authorization_wrap{
+    min-height: calc(100vh - 140px);
+    }
+    .block_btn{
+        margin-bottom: 25px;  
+    }
+    .link{
+        display: block;
+        width: max-content;
+        margin: 0 auto;
+        color: $color_1;
+        font-weight: 700;
+        text-decoration: underline;
+        transition: 0.5s;
+        &:hover{
+            color: #50B9FF  ;
+        }
+    }
+    .authorization_block{
+        width: 30%;
+        margin: 0 auto;
+        @media (max-width: 1210px) {
+            width: 40%;
+        }
+        @media (max-width: 768px) {
+            width: 50%;
+        }
+        @media (max-width: 500px) {
+            width: 80%;
+        }
+    }
+    .forgot{
+        display: block;
+        width: max-content;
+        margin-left: auto;
+        margin-bottom: 30px;
+        font-size: 14px;
+        color: #6a6a6a;
+        text-decoration: underline;
+    }
+}

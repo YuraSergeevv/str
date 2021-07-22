@@ -1,0 +1,27 @@
+.registration{
+
+    .registration_wrap{
+    min-height: calc(100vh - 140px);
+    background-color: #789632;
+    }
+    
+    .registration_block{
+        width: 45%;
+        margin: 0 auto;
+        @media (max-width: 1210px) {
+            width: 55%;
+        }
+        @media (max-width: 500px) {
+            width: 80%;
+        }
+    }
+    .sponsor{
+        padding: 9px 24px;
+        width: max-content;
+        margin: 0 auto;
+       margin-bottom: 20px;
+       background-color: #B6C1C7;
+       border-radius: 5px;
+       color: #ffffff;
+    }
+}

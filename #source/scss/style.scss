@@ -1,0 +1,408 @@
+// <ПОДКЛЮЧЕНИЕ MIXIN>------------------------------------------------------
+@import "mixin.scss";
+// <ПОДКЛЮЧЕНИЕ MIXIN>------------------------------------------------------
+
+// <ШРИФТЫ>-----------------------------------------------------------------
+
+// <подключаем шрифты>------------------------------------------------------
+@import "fonts.scss";
+// </подключаем шрифты>-----------------------------------------------------
+
+// <шрифт по умолчанию>-----------------------------------------------------
+$font-family: "Roboto";
+// </шрифт по умолчанию>----------------------------------------------------
+
+// </ШРИФТЫ>----------------------------------------------------------------
+
+// <ПЕРЕМЕННЫЕ>-------------------------------------------------------------
+$max-width: 1240;
+$min-width: 320;
+$body-font-size: 16;
+$padd-container: 15 ;
+$color_1:#1BA2FC;
+// </ПЕРЕМЕННЫЕ>------------------------------------------------------------
+
+// <ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>---------------------------------------------
+@import "resize-style.scss";
+// </ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>---------------------------------------------
+
+// <BODY>--------------------------------------------------------------------
+body {
+    line-height: 1.25;
+    font-size: $body-font-size+px;
+    font-family: $font-family;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    color: #6A6A6A;
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+// </BODY>--------------------------------------------------------------------
+
+// <ОБОЛОЧКА>----------------------------------------------------------------
+.wrapper {
+    width: 100%;
+   
+}
+.page{
+    padding-top: 80px;
+    padding-bottom: 40px;
+    @media (max-width: 850px) {
+       padding-top: 140px;
+    }
+}
+// </ОБОЛОЧКА>---------------------------------------------------------------
+
+// <КОНТЕЙНЕР>---------------------------------------------------------------
+.container {
+    max-width: $max-width+px;
+    margin: 0 auto;
+    padding: 0 $padd-container+px;
+}
+
+// </КОНТЕЙНЕР>--------------------------------------------------------------
+
+// <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>---------------------------
+@import "class.scss";
+// </ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>--------------------------
+
+// <ШАПКА>-------------------------------------------------------------------
+@import 'header.scss';
+// </ШАПКА>------------------------------------------------------------------
+
+// <ОСНОВНОЙ БЛОК>-----------------------------------------------------------
+
+input,
+textarea {
+    &.error {
+        border-color: red;
+    }
+}
+
+// </ОСНОВНОЙ БЛОК>----------------------------------------------------------
+
+// <404>---------------------------------------------------------------------
+//===========================================================================
+// </404>-------------------------------------------------------------------
+
+////pickmeup
+
+
+
+//////
+
+
+@import "date.scss";
+
+@import "card.scss";
+
+@import "referral.scss";
+
+@import "authorization.scss";
+
+@import "registration.scss";
+
+@import "graph.scss";
+
+@import "letter.scss";
+
+// <ПОДВАЛ>------------------------------------------------------------------
+@import "footer.scss";
+// </ПОДВАЛ>-----------------------------------------------------------------
+
+// <ПОПАП>-------------------------------------------------------------------
+@import "popup.scss";
+// </ПОПАП>------------------------------------------------------------------
+
+// <ПРОКРУТКА ВВЕРХ>---------------------------------------------------------
+.main_link-block{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+
+}
+.scroll-up {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 100;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 3px #dcdcdc;
+    @include anim(0.4s, 0s);
+    transform: translateY(25px);
+    opacity: 0;
+    visibility: hidden;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border: 3px solid red;
+        width: 10px;
+        height: 10px;
+        border-right-width: 0;
+        border-bottom-width: 0;
+        transition: inherit;
+        opacity: 0.6;
+    }
+
+    &__path {
+        box-sizing: border-box;
+        fill: none;
+        stroke: red;
+        stroke-width: 3px;
+        @include anim(0.4s, 0s);
+    }
+
+    &.scroll-up_active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &:hover {
+        &:before {
+            border-color: red;
+            opacity: 1;
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    
+    -webkit-appearance: none;
+    margin: 0; 
+}
+.hide{
+    opacity: 0;
+    pointer-events: none;
+  
+}
+
+.title{
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.block_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 768px) {
+        flex-direction: column;
+      }
+}
+.btn{
+    user-select: none;
+}
+.btn_1{
+    margin: 10px 10px;
+    padding: 15px 30px;
+    min-width: 255px;
+    border-radius: 5px;
+    background-color: $color_1;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+    span{
+        position: relative;
+        z-index: 2;
+    }
+    &:hover{
+    background-color: #50B9FF;
+    }
+}
+.btn_2{
+    margin: 10px 10px;
+    padding: 20px 25px;
+    min-width: 250px;
+    background-color: #dedede;
+    color: #000000;
+    font-weight: 4  00;
+    font-size: 16px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+    span{
+        position: relative;
+        z-index: 2;
+    }
+    
+
+    &:hover{
+      background-color: #f0f0f0;
+    }
+}
+
+a:visited{
+    color: inherit;
+}
+
+.input_block{
+    .row{
+        position: relative;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            margin-bottom: 25px;
+            & > span{
+                margin-bottom: 10px;
+                text-align: left;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    input{
+     border: 1px solid #e5e5e5;  
+     padding: 13px 15px; 
+     font-size: inherit;
+     width: 70%;
+     @media (max-width: 1210px) {
+        width: 55%;
+    }
+    @media (max-width: 768px) {
+       width: 100%;
+    }
+     &::placeholder{
+         color: #e5e5e5;
+         font-size: inherit;
+     }
+     &:focus{
+         &::placeholder{
+             font-size: 0;
+         }
+     }
+    }
+    .registration__icon{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        bottom: 15px;
+        right: 15px;
+        fill:#e5e5e5 ;
+        &.registration__on{
+            fill: #000000;
+        }
+    }
+
+    ///Select///
+    .default{
+        color: #e5e5e5;
+    }
+.select {
+    position: relative;
+    background-color: #ffffff;
+    width: 70%;
+    @media (max-width: 1210px) {
+        width: 55%;
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+     }
+}
+
+.select__header {
+    height: inherit;
+    border: 1px solid #e5e5e5;  
+	cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 13px 15px;
+    background-color: #ffffff;
+}
+.select__current {
+}
+.select__icon {
+    transition: 0.3s;
+	align-items: center;
+	display: flex;
+	flex-shrink: 0;
+	justify-content: center;
+	height: 12px;
+    margin-left: auto;
+    margin-right: 2px;
+	text-align: center;
+    width: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.select__body {
+   max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #e5e5e5;  
+    background-color: #ffffff;
+	border-top: 0;
+	display: none;
+	left: 0;
+	position: absolute;
+    right: 0;
+    z-index: 5;
+    top: 100%;
+}
+.select__item {
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 24px;
+	padding: 8px;
+}
+
+.select__item:hover {
+	background-color: #f2f2f2;
+}
+
+.is-active .select__body {
+    display: block;
+    &::-webkit-scrollbar {
+        width: 2px; /* ширина для вертикального скролла */
+        height: 30px; /* высота для горизонтального скролла */
+        background-color: #e2e2e2;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #9e9e9e
+      }
+      &::-webkit-scrollbar-button:vertical:start:decrement {
+        display: none;
+      }
+      
+      &::-webkit-scrollbar-button:vertical:end:increment {
+        display: none;
+      }
+      
+      &::-webkit-scrollbar-button:horizontal:start:decrement {
+        display: none;
+      }
+      
+      &::-webkit-scrollbar-button:horizontal:end:increment {
+        display: none;
+      }
+}
+.is-active .select__icon{
+   transform: rotate(180deg);
+}
+}
+// </ПРОКРУТКА ВВЕРХ>--------------------------------------------------------
+
+// <ПОДКЛЮЧЕНИЕ МЕДИАЗАПРОСОВ>-----------------------------------------------
+@import "media.scss";
+// </ПОДКЛЮЧЕНИЕ МЕДИАЗАПРОСОВ>----------------------------------------------
+
