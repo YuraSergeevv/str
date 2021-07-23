@@ -188,4 +188,14 @@ $(document).ready(function () {
         }
     });
 
+    $('.date_wrap').on('touchend', function () {
+        $(this).find('.date_info').toggleClass('active');
+        $('.menu').removeClass('active');
+    });
+
+    $('.user_wrap').on('touchend', function () {
+        $(this).find('.menu').toggleClass('active');
+        $('.date_info').removeClass('active');
+    });
+
 });
