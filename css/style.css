@@ -355,7 +355,7 @@ li.counter li:before {
   align-items: center;
   cursor: pointer;
 }
-.no-touch .header .date_wrap:hover .date_info {
+.header .date_wrap:hover .date_info {
   opacity: 1;
   transform: translate(-50%, 0px);
 }
@@ -405,7 +405,7 @@ li.counter li:before {
   position: relative;
   cursor: pointer;
 }
-.no-touch .header .user_wrap:hover .menu {
+.header .user_wrap:hover .menu {
   opacity: 1;
   transform: translate(-50%, 0px);
   pointer-events: initial;
